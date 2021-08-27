@@ -11,8 +11,12 @@ namespace BoxedIn.testing
         [SerializeField] private float speed;
         [SerializeField] private Transform cam;
         private Rigidbody rb;
-        
-        private void Start() => rb = GetComponent<Rigidbody>();
+
+        private void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+            Time.timeScale = 1f;
+        }
         private void Update()
         {
             var h = Input.GetAxis("Horizontal");
@@ -27,6 +31,17 @@ namespace BoxedIn.testing
                
                 rb.angularVelocity = moveDir * (speed * Time.deltaTime);
             }
+        }
+
+        /// <summary>
+        /// When called will pause the game and load the death screen
+        /// </summary>
+        public void PlayerCapture()
+        {
+            // handle death logic here
+            
+            Debug.Log("CAPTURED");
+            Time.timeScale = 0;
         }
     }
 }

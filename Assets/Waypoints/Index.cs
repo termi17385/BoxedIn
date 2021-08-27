@@ -1,6 +1,4 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 
-[HideMonoScript]
-public class Index : SerializedMonoBehaviour
+public class Index : MonoBehaviour
 { [HideInInspector] public int index; }

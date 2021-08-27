@@ -43,5 +43,11 @@ public class WorkerStateMachine : MonoBehaviour
         
         if(states.TryGetValue(currentState, out StateDelegate state)) state.Invoke();
         else Debug.Log($"No State Was Set For {currentState}.");
+
+        
+        // place holder for handling swapping between states
+        if(agent.searchArea) currentState = States.Search;
+        else if(agent.targetSpotted) currentState = States.Chase;
+        else currentState = States.Patrol;
     }
 }
