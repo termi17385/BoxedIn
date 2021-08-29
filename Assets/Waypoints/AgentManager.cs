@@ -3,6 +3,8 @@ using BoxedIn.testing;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Index))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -35,9 +37,13 @@ public class AgentManager : MonoBehaviour
 
         speed = 3.5f;
     }
-    private void Update() => AgentSight();
+    private void Update()
+    {
+        AgentSight();
+    }
     /// <summary> Handles the search when the agent is in a search zone making
     /// it look at key objects </summary>
+    /// 
     public void Search()
     {
         if (searchArea)

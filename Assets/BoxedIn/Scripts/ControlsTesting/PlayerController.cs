@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace BoxedIn.testing
 {
@@ -11,6 +12,7 @@ namespace BoxedIn.testing
         [SerializeField] private float speed;
         [SerializeField] private Transform cam;
         private Rigidbody rb;
+        public GameObject deathPanel;
 
         private void Start()
         {
@@ -39,7 +41,7 @@ namespace BoxedIn.testing
         public void PlayerCapture()
         {
             // handle death logic here
-            
+            deathPanel.SetActive(true);
             Debug.Log("CAPTURED");
             Time.timeScale = 0;
         }

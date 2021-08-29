@@ -14414,10 +14414,15 @@ MonoBehaviour:
   agent: {fileID: 8453860214726452814}
   lineDist: 11.4
   lineOffsetDist: 13.63
-  _angle: 0
+  angle: 0
   searchArea: 0
   targetSpotted: 0
   searchTarget: {fileID: 0}
+  detectionPanel: {fileID: 0}
+  detectedColour: {r: 0.6509434, g: 0.13203098, b: 0.13203098, a: 0}
+  undetectedColour: {r: 0.41350645, g: 0.7735849, b: 0.36124954, a: 0}
+  detectedLine: You have been detected!!!
+  undetectedLine: You are in the clear
 --- !u!114 &8453860214726452915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14430,15 +14435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808a63dc1f4df1f4b878d42c9a58cbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   index: 0
 --- !u!114 &8453860214726452914
 MonoBehaviour:
