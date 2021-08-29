@@ -1,25 +1,26 @@
-using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Waypoints : MonoBehaviour
 {
-    [Title("Agents and Waypoints")]
-    [SerializeField, ReadOnly] private List<Transform> waypoints = new List<Transform>();
+    [Header("Agents and Waypoints")]
+    [SerializeField] private List<Transform> waypoints = new List<Transform>();
     [FormerlySerializedAs("_agents")] [SerializeField] private AgentManager[] agents;
-    [Title("Colours")]
+    
+    [Header("Colours")]
     [SerializeField] private Color waypointColor;
     [SerializeField] private Color agentColor;
+    
     [Space]
+    
     [SerializeField, Tooltip("max distance before going to the next waypoint")] private float distance;
     [SerializeField, Tooltip("DO NOT TICK IN PLAYMODE (enables waypoint creation in editor)")] private bool debug = false;
     private int count;
 
     void Awake() => SetNextWaypoint();
     void Update() => SetNextWaypoint();
-    private void SetNextWaypoint()
+    private void SetNextWaypoint() // from agent index output the transform
     {
         // loops through the agents in the array and gets the index
         // sets the destination of the agent and checks the distance between

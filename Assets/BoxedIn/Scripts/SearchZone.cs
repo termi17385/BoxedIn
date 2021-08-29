@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 public enum SearchType
@@ -11,8 +8,8 @@ public enum SearchType
     MoveItem
 }
 
-[RequireComponent(typeof(SphereCollider)), HideMonoScript]
-public class SearchZone : SerializedMonoBehaviour
+[RequireComponent(typeof(SphereCollider))]
+public class SearchZone : MonoBehaviour
 {
     [SerializeField] private float radius;
     [SerializeField] private AgentManager agent;
@@ -24,43 +21,59 @@ public class SearchZone : SerializedMonoBehaviour
     public Transform[] searchObjects;
     public int count;
 
-    private void Start()
-    {
-        agent = FindObjectOfType<AgentManager>();
-    }
-
+    /// <summary> Used to disable search after a set amount of time </summary>
     private IEnumerator EndSearch()
     {
+        // after 10 seconds of searching
         yield return new WaitForSeconds(10);
-        var stateMachine = FindObjectOfType<WorkerStateMachine>();
-        agent.searchArea = false;
-        stateMachine.ChangeStates(States.Patrol);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {   
-            agent.searchZone = GetComponent<SearchZone>();
-            
-            color = Color.red;
-            var stateMachine = other.GetComponent<WorkerStateMachine>();
-            stateMachine.ChangeStates(States.Search);
-            agent.searchArea = true;
 
+        // if the agent isnt null
+        if(agent != null)
+        {
+            // stops the search and sets agent to null
+            agent.searchArea = false;
+            agent = null;
+        }
+    }
+
+    private void OnTriggerEnter(Collider _other)
+    {
+        // when the agent enters the search zone
+        if (_other.CompareTag("Enemy"))
+        {   
+            // set the agent to the one that entered
+            agent = _other.GetComponent<AgentManager>();
+            
+            // set the agents search zone to this one
+            agent.searchZone = GetComponent<SearchZone>();
+            color = Color.red;
+
+            // set the agent to searching and set turn on end search
+            agent.searchArea = true;
             StartCoroutine(EndSearch());
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider _other)
     {
-        if (other.CompareTag("Enemy"))
-        {   
+        if (_other.CompareTag("Enemy")) 
+        {
             color = Color.green;
+
+            if(agent != null)
+            {
+                agent.searchArea = false;
+                agent = null;
+            }
         }
     }
+    
+    // Just for debugging purposes
     private void OnDrawGizmos()
     {
-        sphereCollider = GetComponent<SphereCollider>();
         Gizmos.color = color;
-        Gizmos.DrawWireSphere(transform.position, (sphereCollider.radius = radius));
+        sphereCollider = GetComponent<SphereCollider>();
+        
+        Gizmos.DrawWireSphere(transform.position, 
+            (sphereCollider.radius = radius));
     }
 }

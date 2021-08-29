@@ -22,7 +22,7 @@ public class force_test : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //forcePoint = this.transform.position + new Vector3(-0.51f, 0.4f, 0);
+            //forcePoint = this.transform.position + new Vector3(-0.51f, 0.4f, 0);p
             forcePoint = this.transform.position + new Vector3(-((cube.bounds.size.x/2) + 0.01f), (cube.bounds.size.y/2) - (cube.bounds.size.y * 0.1f), 0);
             cubeRigid.AddForceAtPosition(new Vector3(-force, 0, 0), forcePoint);
         }

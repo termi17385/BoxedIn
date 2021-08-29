@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.UI;
 public enum States
 {
     Patrol,
@@ -17,6 +18,7 @@ public class WorkerStateMachine : MonoBehaviour
     private Dictionary<States, StateDelegate> states = new Dictionary<States, StateDelegate>();
     [SerializeField] private States currentState = States.Patrol;
     [SerializeField] private AgentManager agent;
+    public DetectionHandler detect;
     public void ChangeStates(States _newStates) => currentState = _newStates;
     
     // Start is called before the first frame update
@@ -43,5 +45,23 @@ public class WorkerStateMachine : MonoBehaviour
         
         if(states.TryGetValue(currentState, out StateDelegate state)) state.Invoke();
         else Debug.Log($"No State Was Set For {currentState}.");
+
+
+        // place holder for handling swapping between states
+        if (agent.searchArea)
+        {
+            currentState = States.Search;
+            detect.PlayerUndetected(this.gameObject.name);
+        }
+        else if (agent.targetSpotted)
+        {
+            currentState = States.Chase;
+            detect.PlayerDetected(this.gameObject.name);
+        }
+        else
+        {
+            currentState = States.Patrol;
+            detect.PlayerUndetected(this.gameObject.name);
+        }
     }
 }
