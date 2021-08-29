@@ -44,6 +44,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481882705364199018}
     m_Modifications:
+    - target: {fileID: 956282481387046602, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 292245a30350898469ad7982545852c0, type: 2}
     - target: {fileID: 1604857796018218783, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
       propertyPath: m_Name
       value: PlaceHoldPallet
@@ -118,6 +122,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481882705364199018}
     m_Modifications:
+    - target: {fileID: 956282481387046602, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 292245a30350898469ad7982545852c0, type: 2}
     - target: {fileID: 1604857796018218783, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
       propertyPath: m_Name
       value: PlaceHoldPallet (1)
@@ -192,6 +200,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481882705364199018}
     m_Modifications:
+    - target: {fileID: 956282481387046602, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 292245a30350898469ad7982545852c0, type: 2}
     - target: {fileID: 1604857796018218783, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
       propertyPath: m_Name
       value: PlaceHoldPallet (7)
@@ -266,6 +278,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481882705364199018}
     m_Modifications:
+    - target: {fileID: 956282481387046602, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 292245a30350898469ad7982545852c0, type: 2}
     - target: {fileID: 1604857796018218783, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
       propertyPath: m_Name
       value: PlaceHoldPallet (5)
@@ -340,6 +356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481882705364199018}
     m_Modifications:
+    - target: {fileID: 956282481387046602, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 292245a30350898469ad7982545852c0, type: 2}
     - target: {fileID: 1604857796018218783, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
       propertyPath: m_Name
       value: PlaceHoldPallet (4)
@@ -414,6 +434,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481882705364199018}
     m_Modifications:
+    - target: {fileID: 956282481387046602, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 292245a30350898469ad7982545852c0, type: 2}
     - target: {fileID: 1604857796018218783, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
       propertyPath: m_Name
       value: PlaceHoldPallet (3)
@@ -488,6 +512,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481882705364199018}
     m_Modifications:
+    - target: {fileID: 956282481387046602, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 292245a30350898469ad7982545852c0, type: 2}
     - target: {fileID: 1604857796018218783, guid: 9e0faf569b5529e4d90c0739da913d8a, type: 3}
       propertyPath: m_Name
       value: PlaceHoldPallet (2)
