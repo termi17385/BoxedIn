@@ -38,12 +38,12 @@ ModelImporter:
       name: Armature|ArmatureAction
       takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 1
-      lastFrame: 22
+      firstFrame: 6
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 2
+      cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
